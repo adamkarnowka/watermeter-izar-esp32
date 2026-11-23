@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><title>Schemat ESP32 + CC1101</title>
+<style>
+  body { margin: 0; background: #14161a; font-family: -apple-system, "Helvetica Neue", sans-serif; }
+  svg { display: block; }
+  .pin { font: 600 13px -apple-system, sans-serif; fill: #8b929a; }
+  .pin.on { fill: #fff; }
+  .lab { font: 700 18px -apple-system, sans-serif; fill: #e9edf0; }
+  .sub { font: 13px -apple-system, sans-serif; fill: #8b929a; }
+  .note { font: 14px -apple-system, sans-serif; fill: #c9ced3; }
+  .warn { font: 700 14px -apple-system, sans-serif; fill: #ff6b6b; }
+</style></head><body>
+<svg id="s" width="1100" height="820" viewBox="0 0 1100 820" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+const S = document.getElementById("s"), NS = "http://www.w3.org/2000/svg";
+const el = (t, a, txt) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; S.append(e); return e; };
+
+el("text", { x: 40, y: 44, class: "lab", style: "font-size:24px" }, "Wodomierz: połączenie ESP32 ↔ CC1101 (868 MHz)");
+el("text", { x: 40, y: 68, class: "sub" }, "ESP32 DevKit V1 (30 pinów, widok od strony elementów, USB na dole). 7 przewodów. Odłącz płytkę od USB na czas łączenia.");
+
+// ---- ESP32 DevKit V1, 30 pin ----
+const BX = 90, BY = 110, BW = 300, BH = 640, PITCH = 36, P0 = BY + 60;
+el("rect", { x: BX, y: BY, width: BW, height: BH, rx: 14, fill: "#1f3a5a", stroke: "#3c6a9a", "stroke-width": 2 });
+el("rect", { x: BX + 70, y: BY + 20, width: 160, height: 150, rx: 6, fill: "#c7ccd1", stroke: "#8d949b" });
+el("text", { x: BX + 150, y: BY + 100, "text-anchor": "middle", style: "font:700 16px sans-serif;fill:#3a3f45" }, "ESP32-WROOM-32");
+el("rect", { x: BX + 120, y: BY + BH - 22, width: 60, height: 30, rx: 5, fill: "#9aa1a8" });
+el("text", { x: BX + 150, y: BY + BH + 30, "text-anchor": "middle", class: "sub" }, "USB");
+el("text", { x: BX + 150, y: BY + 300, "text-anchor": "middle", class: "lab" }, "ESP32");
+
+const left  = ["EN","VP","VN","D34","D35","D32","D33","D25","D26","D27","D14","D12","D13","GND","VIN"];
+const right = ["D23","D22","TX0","RX0","D21","D19","D18","D5","D17","D16","D4","D2","D15","GND","3V3"];
+// [CC1101 pin, ESP side, ESP row, colour, ESP label, CC1101 pin index]
+const W = [
+  ["VCC",  "R", 14, "#ff5252", "3V3", 0],
+  ["GND",  "R", 13, "#bdbdbd", "GND", 1],
+  ["MOSI / SI", "L", 5, "#ffb300", "D32 (GPIO32)", 2],
+  ["SCK / SCLK","L", 6, "#42a5f5", "D33 (GPIO33)", 3],
+  ["MISO / SO", "R", 5, "#ab47bc", "D19 (GPIO19)", 4],
+  ["GDO0", "R", 1, "#66bb6a", "D22 (GPIO22)", 6],
+  ["CSN / CS", "R", 0, "#26c6da", "D23 (GPIO23)", 7],
+];
+const usedL = {}, usedR = {};
+W.forEach(([, s, r, c]) => (s === "L" ? usedL : usedR)[r] = c);
+const pinXY = (s, r) => [s === "L" ? BX + 18 : BX + BW - 18, P0 + r * PITCH];
+left.forEach((p, i) => {
+  const [x, y] = pinXY("L", i), c = usedL[i];
+  el("circle", { cx: x, cy: y, r: 7, fill: c || "#0d1b2a", stroke: "#e0b84a", "stroke-width": 2 });
+  el("text", { x: x + 14, y: y + 5, class: "pin" + (c ? " on" : "") }, p);
+});
+right.forEach((p, i) => {
+  const [x, y] = pinXY("R", i), c = usedR[i];
+  el("circle", { cx: x, cy: y, r: 7, fill: c || "#0d1b2a", stroke: "#e0b84a", "stroke-width": 2 });
+  el("text", { x: x - 14, y: y + 5, "text-anchor": "end", class: "pin" + (c ? " on" : "") }, p);
+});
+
+// ---- CC1101 module, pin row along the bottom edge ----
+const CX = 600, CY = 150, CW = 400, CH = 290;
+const CCP = ["VCC","GND","MOSI","SCLK","MISO","GDO2","GDO0","CSN"];
+const ccX = i => CX + 45 + i * 44, ccY = CY + CH - 26;
+el("rect", { x: CX, y: CY, width: CW, height: CH, rx: 10, fill: "#1e6b34", stroke: "#3f8a55", "stroke-width": 2 });
+el("rect", { x: CX + 150, y: CY + 90, width: 100, height: 100, rx: 6, fill: "#2a2d31", stroke: "#555" });
+el("text", { x: CX + 200, y: CY + 145, "text-anchor": "middle", style: "font:700 15px sans-serif;fill:#cfd3d7" }, "CC1101");
+el("text", { x: CX + 200, y: CY + 60, "text-anchor": "middle", class: "sub", style: "fill:#cfe8d5" }, "868 MHz Module");
+// antenna: middle hole at the top
+el("circle", { cx: CX + 200, cy: CY + 22, r: 7, fill: "#0d2a16", stroke: "#ffd54f", "stroke-width": 3 });
+el("rect", { x: CX + 193, y: CY - 90, width: 14, height: 105, rx: 7, fill: "#333", stroke: "#666" });
+el("text", { x: CX + 222, y: CY - 50, class: "sub" }, "antena → środkowy otwór (ANT)");
+CCP.forEach((n, i) => {
+  const w = W.find(x => x[5] === i);
+  el("circle", { cx: ccX(i), cy: ccY, r: 7, fill: w ? w[3] : "#0d2a16", stroke: "#e0b84a", "stroke-width": 2 });
+  el("text", { x: ccX(i), y: ccY - 16, "text-anchor": "middle", class: "pin" + (w ? " on" : "") }, n);
+});
+
+// ---- wires ----
+W.forEach(([n, s, r, c], k) => {
+  const [x1, y1] = pinXY(s, r), i = W[k][5], x2 = ccX(i);
+  const lane = BX + BW + 40 + k * 22, low = CY + CH + 40 + k * 14;
+  let d;
+  if (s === "L") {
+    const out = BX - 22 - k * 8, top = BY - 12 - (k - 2) * 10;
+    d = `M${x1} ${y1} H${out} V${top} H${lane} V${low} H${x2} V${ccY}`;
+  } else d = `M${x1} ${y1} H${lane} V${low} H${x2} V${ccY}`;
+  el("path", { d, fill: "none", stroke: c, "stroke-width": 4, "stroke-linejoin": "round", "stroke-linecap": "round", opacity: .95 });
+});
+
+// ---- table ----
+const TX = 600, TY = 600;
+el("text", { x: TX, y: TY, class: "lab" }, "Ściąga");
+W.forEach(([a, , , c, b], i) => {
+  const y = TY + 26 + i * 22;
+  el("rect", { x: TX, y: y - 11, width: 26, height: 8, rx: 4, fill: c });
+  el("text", { x: TX + 38, y, class: "note" }, `${a}  →  ${b}`);
+});
+el("text", { x: TX + 270, y: TY + 26, class: "warn" }, "VCC tylko do 3V3, nie do VIN!");
+el("text", { x: TX + 270, y: TY + 48, class: "note" }, "5V uszkodzi moduł radiowy.");
+el("text", { x: TX + 270, y: TY + 70, class: "note" }, "GDO2 zostaje wolne.");
+el("text", { x: TX + 270, y: TY + 92, class: "note" }, "Antenę przykręć przed");
+el("text", { x: TX + 270, y: TY + 110, class: "note" }, "pierwszym uruchomieniem.");
+el("text", { x: TX + 270, y: TY + 140, class: "sub" }, "Płytka 38-pin: te same GPIO,");
+el("text", { x: TX + 270, y: TY + 158, class: "sub" }, "inne położenie pinów.");
+</script></body></html>

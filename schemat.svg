@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="820" viewBox="0 0 1100 820">
+<style>
+  
+  
+  .pin { font: 600 13px -apple-system, sans-serif; fill: #8b929a; }
+  .pin.on { fill: #fff; }
+  .lab { font: 700 18px -apple-system, sans-serif; fill: #e9edf0; }
+  .sub { font: 13px -apple-system, sans-serif; fill: #8b929a; }
+  .note { font: 14px -apple-system, sans-serif; fill: #c9ced3; }
+  .warn { font: 700 14px -apple-system, sans-serif; fill: #ff6b6b; }
+</style>
+<rect width="1100" height="820" fill="#14161a"/>
+<text x="40" y="44" class="lab" style="font-size:24px">Wodomierz: połączenie ESP32 ↔ CC1101 (868 MHz)</text>
+<text x="40" y="68" class="sub">ESP32 DevKit V1 (30 pinów, widok od strony elementów, USB na dole). 7 przewodów. Odłącz płytkę od USB na czas łączenia.</text>
+<rect x="90" y="110" width="300" height="640" rx="14" fill="#1f3a5a" stroke="#3c6a9a" stroke-width="2"></rect>
+<rect x="160" y="130" width="160" height="150" rx="6" fill="#c7ccd1" stroke="#8d949b"></rect>
+<text x="240" y="210" text-anchor="middle" style="font:700 16px sans-serif;fill:#3a3f45">ESP32-WROOM-32</text>
+<rect x="210" y="728" width="60" height="30" rx="5" fill="#9aa1a8"></rect>
+<text x="240" y="780" text-anchor="middle" class="sub">USB</text>
+<text x="240" y="410" text-anchor="middle" class="lab">ESP32</text>
+<circle cx="108" cy="170" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="175" class="pin">EN</text>
+<circle cx="108" cy="206" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="211" class="pin">VP</text>
+<circle cx="108" cy="242" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="247" class="pin">VN</text>
+<circle cx="108" cy="278" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="283" class="pin">D34</text>
+<circle cx="108" cy="314" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="319" class="pin">D35</text>
+<circle cx="108" cy="350" r="7" fill="#ffb300" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="355" class="pin on">D32</text>
+<circle cx="108" cy="386" r="7" fill="#42a5f5" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="391" class="pin on">D33</text>
+<circle cx="108" cy="422" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="427" class="pin">D25</text>
+<circle cx="108" cy="458" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="463" class="pin">D26</text>
+<circle cx="108" cy="494" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="499" class="pin">D27</text>
+<circle cx="108" cy="530" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="535" class="pin">D14</text>
+<circle cx="108" cy="566" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="571" class="pin">D12</text>
+<circle cx="108" cy="602" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="607" class="pin">D13</text>
+<circle cx="108" cy="638" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="643" class="pin">GND</text>
+<circle cx="108" cy="674" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="122" y="679" class="pin">VIN</text>
+<circle cx="372" cy="170" r="7" fill="#26c6da" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="175" text-anchor="end" class="pin on">D23</text>
+<circle cx="372" cy="206" r="7" fill="#66bb6a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="211" text-anchor="end" class="pin on">D22</text>
+<circle cx="372" cy="242" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="247" text-anchor="end" class="pin">TX0</text>
+<circle cx="372" cy="278" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="283" text-anchor="end" class="pin">RX0</text>
+<circle cx="372" cy="314" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="319" text-anchor="end" class="pin">D21</text>
+<circle cx="372" cy="350" r="7" fill="#ab47bc" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="355" text-anchor="end" class="pin on">D19</text>
+<circle cx="372" cy="386" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="391" text-anchor="end" class="pin">D18</text>
+<circle cx="372" cy="422" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="427" text-anchor="end" class="pin">D5</text>
+<circle cx="372" cy="458" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="463" text-anchor="end" class="pin">D17</text>
+<circle cx="372" cy="494" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="499" text-anchor="end" class="pin">D16</text>
+<circle cx="372" cy="530" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="535" text-anchor="end" class="pin">D4</text>
+<circle cx="372" cy="566" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="571" text-anchor="end" class="pin">D2</text>
+<circle cx="372" cy="602" r="7" fill="#0d1b2a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="607" text-anchor="end" class="pin">D15</text>
+<circle cx="372" cy="638" r="7" fill="#bdbdbd" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="643" text-anchor="end" class="pin on">GND</text>
+<circle cx="372" cy="674" r="7" fill="#ff5252" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="358" y="679" text-anchor="end" class="pin on">3V3</text>
+<rect x="600" y="150" width="400" height="290" rx="10" fill="#1e6b34" stroke="#3f8a55" stroke-width="2"></rect>
+<rect x="750" y="240" width="100" height="100" rx="6" fill="#2a2d31" stroke="#555"></rect>
+<text x="800" y="295" text-anchor="middle" style="font:700 15px sans-serif;fill:#cfd3d7">CC1101</text>
+<text x="800" y="210" text-anchor="middle" class="sub" style="fill:#cfe8d5">868 MHz Module</text>
+<circle cx="800" cy="172" r="7" fill="#0d2a16" stroke="#ffd54f" stroke-width="3"></circle>
+<rect x="793" y="60" width="14" height="105" rx="7" fill="#333" stroke="#666"></rect>
+<text x="822" y="100" class="sub">antena → środkowy otwór (ANT)</text>
+<circle cx="645" cy="414" r="7" fill="#ff5252" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="645" y="398" text-anchor="middle" class="pin on">VCC</text>
+<circle cx="689" cy="414" r="7" fill="#bdbdbd" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="689" y="398" text-anchor="middle" class="pin on">GND</text>
+<circle cx="733" cy="414" r="7" fill="#ffb300" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="733" y="398" text-anchor="middle" class="pin on">MOSI</text>
+<circle cx="777" cy="414" r="7" fill="#42a5f5" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="777" y="398" text-anchor="middle" class="pin on">SCLK</text>
+<circle cx="821" cy="414" r="7" fill="#ab47bc" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="821" y="398" text-anchor="middle" class="pin on">MISO</text>
+<circle cx="865" cy="414" r="7" fill="#0d2a16" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="865" y="398" text-anchor="middle" class="pin">GDO2</text>
+<circle cx="909" cy="414" r="7" fill="#66bb6a" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="909" y="398" text-anchor="middle" class="pin on">GDO0</text>
+<circle cx="953" cy="414" r="7" fill="#26c6da" stroke="#e0b84a" stroke-width="2"></circle>
+<text x="953" y="398" text-anchor="middle" class="pin on">CSN</text>
+<path d="M372 674 H430 V480 H645 V414" fill="none" stroke="#ff5252" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M372 638 H452 V494 H689 V414" fill="none" stroke="#bdbdbd" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M108 350 H52 V98 H474 V508 H733 V414" fill="none" stroke="#ffb300" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M108 386 H44 V88 H496 V522 H777 V414" fill="none" stroke="#42a5f5" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M372 350 H518 V536 H821 V414" fill="none" stroke="#ab47bc" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M372 206 H540 V550 H909 V414" fill="none" stroke="#66bb6a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<path d="M372 170 H562 V564 H953 V414" fill="none" stroke="#26c6da" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"></path>
+<text x="600" y="600" class="lab">Ściąga</text>
+<rect x="600" y="615" width="26" height="8" rx="4" fill="#ff5252"></rect>
+<text x="638" y="626" class="note">VCC  →  3V3</text>
+<rect x="600" y="637" width="26" height="8" rx="4" fill="#bdbdbd"></rect>
+<text x="638" y="648" class="note">GND  →  GND</text>
+<rect x="600" y="659" width="26" height="8" rx="4" fill="#ffb300"></rect>
+<text x="638" y="670" class="note">MOSI / SI  →  D32 (GPIO32)</text>
+<rect x="600" y="681" width="26" height="8" rx="4" fill="#42a5f5"></rect>
+<text x="638" y="692" class="note">SCK / SCLK  →  D33 (GPIO33)</text>
+<rect x="600" y="703" width="26" height="8" rx="4" fill="#ab47bc"></rect>
+<text x="638" y="714" class="note">MISO / SO  →  D19 (GPIO19)</text>
+<rect x="600" y="725" width="26" height="8" rx="4" fill="#66bb6a"></rect>
+<text x="638" y="736" class="note">GDO0  →  D22 (GPIO22)</text>
+<rect x="600" y="747" width="26" height="8" rx="4" fill="#26c6da"></rect>
+<text x="638" y="758" class="note">CSN / CS  →  D23 (GPIO23)</text>
+<text x="870" y="626" class="warn">VCC tylko do 3V3, nie do VIN!</text>
+<text x="870" y="648" class="note">5V uszkodzi moduł radiowy.</text>
+<text x="870" y="670" class="note">GDO2 zostaje wolne.</text>
+<text x="870" y="692" class="note">Antenę przykręć przed</text>
+<text x="870" y="710" class="note">pierwszym uruchomieniem.</text>
+<text x="870" y="740" class="sub">Płytka 38-pin: te same GPIO,</text>
+<text x="870" y="758" class="sub">inne położenie pinów.</text>
+</svg>

@@ -1,0 +1,9 @@
+# sekrety i prywatna konfiguracja
+secrets.yaml
+prywatne/
+logi/
+# środowisko i build
+.venv/
+.esphome/
+__pycache__/
+.DS_Store
